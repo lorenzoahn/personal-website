@@ -8,13 +8,94 @@
  */
 
 /* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+Base styles: opinionated defaults
+========================================================================== */
+
+:root {
+  --lightWhite: #abb2bf;
+  --malibu: #61afef;
+  --purple: #c678dd;
+  --chalky: #e5c07b;
+  --coral: #e06c75;
+  --dark: #282c34;
+  --lightDark: #7f848e;
+}
+
+#asciiname {
+  font-size: .6em;
+  animation: glow 4s infinite alternate;
+  text-shadow: 0 0 15px var(--purple);
+}
+
+@keyframes glow {
+  to {
+    text-shadow: 0 0 30px rgb(159, 49, 206);
+  }
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
 
 html {
-  color: #222;
+  color: #abb2bf;
   font-size: 1em;
   line-height: 1.4;
+}
+
+body {
+  font-family: "Fira Sans", sans-serif;
+  background-color: var(--dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: var(--purple);
+}
+
+h2 {
+  color: var(--purple);
+}
+
+p {
+  color: var(--lightWhite);
+}
+
+div.card {
+  background-color: var(--dark);
+  border: 1px solid var(--lightWhite);
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em;
+  box-shadow: 0 0 3px var(--lightWhite);
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: flex-start;
+  width: 80%;
+  max-width: 40em;
+}
+
+footer {
+  /* justify-self: auto; */
+  margin-top: auto;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a.icon {
+  color: inherit;
+  text-decoration: none;
+}
+
+i.icon {
+  font-size: 1.3em;
 }
 
 /*
@@ -24,15 +105,15 @@ html {
  * Customize the background color to match your design.
  */
 
-::-moz-selection {
-  background: #b3d4fc;
+/* ::-moz-selection {
+  background: #94b7e2;
   text-shadow: none;
 }
 
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
-}
+} */
 
 /*
  * A better looking default horizontal rule
@@ -172,9 +253,9 @@ textarea {
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
 
@@ -185,6 +266,7 @@ textarea {
    ========================================================================== */
 
 @media print {
+
   *,
   *::before,
   *::after {
@@ -244,4 +326,3 @@ textarea {
     page-break-after: avoid;
   }
 }
-
